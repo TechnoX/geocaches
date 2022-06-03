@@ -97,7 +97,7 @@ while True:
     thickness = 2
     
     # Using cv2.putText() method 
-    final = cv2.putText(final, 'Try to cover the area', (140,30), font,  
+    final = cv2.putText(final, 'Try to only cover the area', (140,30), font,  
                         fontScale, color, thickness, cv2.LINE_AA) 
         
     # Using cv2.putText() method
