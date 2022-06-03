@@ -35,7 +35,7 @@ while True:
     ret, frame = capture.read()
     if frame is None:
         break
-    cv2.imshow('Image', frame)
+    #cv2.imshow('Image', frame)
     blur = cv2.blur(frame,(20,20))    
     #update the background model
     fgMask = backSub.apply(blur, None, 0.0001)
