@@ -38,7 +38,7 @@ while True:
     #cv2.imshow('Image', frame)
     blur = cv2.blur(frame,(20,20))    
     #update the background model
-    fgMask = backSub.apply(blur, None, 0.0001)
+    fgMask = backSub.apply(blur, None, 0.001)
 
     _, fgMask = cv2.threshold(fgMask, thresh=240, maxval=255, type=cv2.THRESH_BINARY)
     #cv2.imshow('Geocaching', fgMask)
