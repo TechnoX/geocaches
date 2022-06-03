@@ -72,7 +72,7 @@ while True:
     #print("Inverted pattern size: " + str(inverted_pattern_size))
     
     
-    green_hair_w = cv2.addWeighted(green, 0.3, frame, 0.7, 0)
+    green_hair_w = cv2.addWeighted(green, 0.6, frame, 0.7, 0)
     final = cv2.addWeighted(red, 0.3, green_hair_w, 0.7, 0)
     cv2.drawContours(final, contours, -1, (255, 0 , 0), 3)
     
