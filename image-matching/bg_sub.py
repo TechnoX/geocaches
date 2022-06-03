@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import time
 
 #create Background Subtractor objects
 #backSub = cv2.createBackgroundSubtractorKNN()
@@ -7,8 +8,20 @@ backSub = cv2.createBackgroundSubtractorMOG2()
 #backSub.setDetectShadows(False)
 
 capture = cv2.VideoCapture(0)
-#capture.set(cv2.CAP_PROP_AUTO_EXPOSURE, 2)
+time.sleep(0.2)
+capture.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
+time.sleep(0.2)
 capture.set(cv2.CAP_PROP_EXPOSURE,100)
+time.sleep(0.2)
+capture.set(cv2.CAP_PROP_AUTO_WB, 0)
+time.sleep(0.2)
+capture.set(cv2.CAP_PROP_AUTOFOCUS,0)
+time.sleep(0.2)
+
+
+
+
+
 pattern = cv2.imread('pattern1.png', cv2.IMREAD_GRAYSCALE)
 edged = cv2.Canny(pattern, 30, 200)
 contours, _ = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
