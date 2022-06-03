@@ -78,6 +78,8 @@ while True:
     
     #show the current frame and the fg masks
     #cv2.imshow('Frame', frame)
+
+    final = cv2.flip(final, 1)
     
     procent = int(round(100 * (number_of_good_values / pattern_size)    *    (1 - number_of_bad_values / inverted_pattern_size)))
     #print(procent)
