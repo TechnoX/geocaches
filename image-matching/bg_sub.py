@@ -26,6 +26,11 @@ pattern = cv2.imread('pattern1.png', cv2.IMREAD_GRAYSCALE)
 edged = cv2.Canny(pattern, 30, 200)
 contours, _ = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
+cv2.namedWindow("Geocaching", cv2.WND_PROP_FULLSCREEN)
+cv2.setWindowProperty("Geocaching", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+
+
 while True:
     ret, frame = capture.read()
     if frame is None:
